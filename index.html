@@ -20,10 +20,11 @@
                 if (seconds === 0) {
                     minutes--;
                     if (minutes < 10) minutes = "0" + minutes;
-                    seconds = 59;
+                    seconds = 59; 
                 }
                 seconds--;
-                if (seconds == 0) minutes = "0" + seconds; 
+                if (seconds < 0) minutes = "0" + seconds; 
+                cleartimeout()
             }
         }, 1000);
     })
