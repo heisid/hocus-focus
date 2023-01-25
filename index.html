@@ -23,7 +23,7 @@
                     seconds = 59;
                 }
                 seconds--;
-                if (seconds < 10) minutes = "0" + seconds;
+                if (seconds == 0) minutes = "0" + seconds; 
             }
         }, 1000);
     })
