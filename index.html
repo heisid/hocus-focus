@@ -3,11 +3,14 @@
 <head>
     <title>Hocus Focuz</title>
     <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h3>Hocus Focuz, Biggus Dickus</h3>
-    <div id="display"></div>
-    <button id="startBtn" onclick="start()">Start</button>
-    <button id="resetBtn" onclick="reset()">Reset</button>
+    <h1 id="title">Hocus Focuz, Biggus Dickus</h1>
+    <div id="display" onload="init()"></div>
+    <div class="btnContainer">
+        <button id="startBtn" class="btn" onclick="start()">Start</button>
+        <button id="resetBtn" class="btn" onclick="reset()">Reset</button>
+    </div>
 </body>
 </html>
