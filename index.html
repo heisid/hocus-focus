@@ -1,32 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <title>Hocus Focus</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Hocus Focuz</title>
+    <script src="app.js"></script>
 </head>
 <body>
-    <div>Time is up in <span id="countdown"></span> minutes! Hurry up</div>
+    <h3>Hocus Focuz, Biggus Dickus</h3>
+    <div id="display"></div>
+    <button id="startBtn" onclick="start()">Start</button>
+    <button id="resetBtn" onclick="reset()">Reset</button>
 </body>
-<script type="application/javascript">
-    let minutes = 5, seconds = 0;
-    $(function(){
-        $("#countdown").html(minutes + ":" + seconds);
-        const count = setInterval(function () {
-            if (parseInt(minutes) < 0) {
-                clearInterval(count);
-            } else {
-                $("#countdown").html(minutes + ":" + seconds);
-                if (seconds === 0) {
-                    minutes--;
-                    if (minutes < 10) minutes = "0" + minutes;
-                    seconds = 59; 
-                }
-                seconds--;
-                if (seconds < 0) minutes = "0" + seconds; 
-                cleartimeout()
-            }
-        }, 1000);
-    })
-</script>
 </html>
