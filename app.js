@@ -36,6 +36,14 @@ function start() {
     }, 1000);
 }
 
+function openModal() {
+    // todo
+}
+
+function set(setTime) {
+    // todo
+}
+
 function reset() {
     clearInterval(timer);
     document.getElementById('display').innerHTML = target;

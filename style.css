@@ -41,9 +41,9 @@ body {
     color: white;
     border: none;
     padding: 5px;
-    font-size: 31px;
+    font-size: 20px;
     height: 130px;
-    width: 130px;
+    width: 100px;
     box-shadow: 0 2px 4px darkslategray;
     border-radius: 10%;
     cursor: pointer;
