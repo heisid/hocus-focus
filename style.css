@@ -24,7 +24,7 @@ body {
     font-size:80px
 }
 
-.btnContainer {
+.container {
     margin:10px auto;
     background: #34495e;
     width:400px;
@@ -127,4 +127,13 @@ input{
 input:focus{
     border-color:dodgerBlue;
     box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+.img-container {
+    height: 120px;
+}
+
+img {
+    height: 100px;
+    margin: 10px;
 }

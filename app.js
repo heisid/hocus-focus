@@ -10,10 +10,11 @@ let hourInput;
 let minuteInput;
 let secondInput;
 let audio;
+let images;
 
 
 document.addEventListener('DOMContentLoaded', function(event) {
-    target = "0:2:10";
+    target = "0:0:10";
 
     // elements
     startBtn = document.getElementById('startBtn');
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     minuteInput = document.getElementById('minuteInput');
     secondInput = document.getElementById('secondInput');
     audio = new Audio('assets/Nyan Cat Sound Effect.mp3');
+    images = document.getElementsByClassName('catPic');
 
     display.innerHTML = target;
 });
@@ -44,7 +46,12 @@ function start() {
         let second = parseInt(remainingArr[2]);
         if (hour === 0 && minute === 0 && second === 0) {
             clearInterval(timer);
+            for (let i = 0; i < images.length; i++) {
+                images[i].src = 'assets/cat-kitty.gif';
+
+            }
             audio.play();
+            audio.loop = true;
         }
 
         if (second === 0) {
@@ -91,6 +98,12 @@ function setTime() {
 
 function reset() {
     clearInterval(timer);
+    audio.pause();
+    for (let i = 0; i < images.length; i++) {
+        images[i].src = 'assets/cat-kitty.jpg';
+
+    }
+    audio.currentTime = 0;
     display.innerHTML = target;
     startBtn.disabled = false;
     setBtn.disabled = false;
