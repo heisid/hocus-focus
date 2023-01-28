@@ -70,10 +70,20 @@ function windowOnClick(event) {
     }
 }
 
+function isValidInput(input) {
+    return !isNaN(input) && input > 0;
+}
+
 function setTime() {
-    target = hourInput.value + ':' + minuteInput.value + ':' + secondInput.value;
-    display.innerHTML = target;
-    toggleModal();
+    const hour = parseInt(hourInput.value);
+    const minute = parseInt(minuteInput.value);
+    const second = parseInt(secondInput.value);
+
+    if ([hour, minute, second].every(isValidInput)) {
+        target = hour + ':' + minute + ':' + second;
+        display.innerHTML = target;
+        toggleModal();
+    }
 }
 
 function reset() {
