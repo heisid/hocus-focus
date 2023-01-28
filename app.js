@@ -9,6 +9,7 @@ let modal;
 let hourInput;
 let minuteInput;
 let secondInput;
+let audio;
 
 
 document.addEventListener('DOMContentLoaded', function(event) {
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     hourInput = document.getElementById('hourInput');
     minuteInput = document.getElementById('minuteInput');
     secondInput = document.getElementById('secondInput');
+    audio = new Audio('assets/Nyan Cat Sound Effect.mp3');
 
     display.innerHTML = target;
 });
@@ -42,6 +44,7 @@ function start() {
         let second = parseInt(remainingArr[2]);
         if (hour === 0 && minute === 0 && second === 0) {
             clearInterval(timer);
+            audio.play();
         }
 
         if (second === 0) {
@@ -71,7 +74,7 @@ function windowOnClick(event) {
 }
 
 function isValidInput(input) {
-    return !isNaN(input) && input > 0;
+    return !isNaN(input) && input >= 0;
 }
 
 function setTime() {
