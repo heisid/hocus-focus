@@ -3,6 +3,7 @@ let target;
 
 // elements
 let startBtn;
+let setBtn;
 let display;
 let modal;
 let hourInput;
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     // elements
     startBtn = document.getElementById('startBtn');
+    setBtn = document.getElementById('setBtn');
     display = document.getElementById('display');
     modal = document.querySelector('.modal');
     hourInput = document.getElementById('hourInput');
@@ -28,6 +30,7 @@ window.addEventListener('click', windowOnClick)
 
 function start() {
     startBtn.disabled = true;
+    setBtn.disabled = true;
     let remaining = target;
 
     timer = setInterval(function() {
@@ -77,4 +80,5 @@ function reset() {
     clearInterval(timer);
     display.innerHTML = target;
     startBtn.disabled = false;
+    setBtn.disabled = false;
 }
