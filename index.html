@@ -11,8 +11,25 @@
     <div class="btnContainer">
         <button id="startBtn" class="btn" onclick="start()">Start</button>
 <!--        todo: set button not implemented yet-->
-        <button id="setBtn" class="btn" onclick="openModal()">Set</button>
+        <button id="setBtn" class="btn" onclick="toggleModal()">Set</button>
         <button id="resetBtn" class="btn" onclick="reset()">Reset</button>
+    </div>
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="toggleModal()">&times;</span>
+            <h3>Set Time</h3>
+<!--            type number does not work on firefox :'(-->
+            <label for="hourInput">Hour</label>
+            <input id="hourInput" type="number" >
+            <label for="minuteInput">Minute</label>
+            <input id="minuteInput" type="number">
+            <label for="secondInput">Second</label>
+            <input id="secondInput" type="number">
+            <div class="small-btn-container">
+                <button id="applyBtn" class="btn small-btn" onclick="setTime()">Apply</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

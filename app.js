@@ -1,13 +1,34 @@
 let timer;
-let target = "0:2:10";
+let target;
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById('display').innerHTML = target;
+// elements
+let startBtn;
+let display;
+let modal;
+let hourInput;
+let minuteInput;
+let secondInput;
+
+
+document.addEventListener('DOMContentLoaded', function(event) {
+    target = "0:2:10";
+
+    // elements
+    startBtn = document.getElementById('startBtn');
+    display = document.getElementById('display');
+    modal = document.querySelector('.modal');
+    hourInput = document.getElementById('hourInput');
+    minuteInput = document.getElementById('minuteInput');
+    secondInput = document.getElementById('secondInput');
+
+    display.innerHTML = target;
 });
+window.addEventListener('click', windowOnClick)
+
 
 function start() {
-    document.getElementById('startBtn').disabled = true;
-    let remaining = target ?? "0:5:10";
+    startBtn.disabled = true;
+    let remaining = target;
 
     timer = setInterval(function() {
         document.getElementById('display').innerHTML = remaining;
@@ -36,16 +57,24 @@ function start() {
     }, 1000);
 }
 
-function openModal() {
-    // todo
+function toggleModal() {
+    modal.classList.toggle('show-modal');
 }
 
-function set(setTime) {
-    // todo
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+function setTime() {
+    target = hourInput.value + ':' + minuteInput.value + ':' + secondInput.value;
+    display.innerHTML = target;
+    toggleModal();
 }
 
 function reset() {
     clearInterval(timer);
-    document.getElementById('display').innerHTML = target;
-    document.getElementById('startBtn').disabled = false;
+    display.innerHTML = target;
+    startBtn.disabled = false;
 }
